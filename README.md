@@ -22,7 +22,7 @@ $ export GITHUB_API=rmarkello:1239012803218032981390218930218939021323
 
 ```python
 >>> from hacktrack import PROJECT_LIST, get_project_info
->>> commits, issues = get_all_project_info(PROJECT_LIST, update=True)
+>>> commits, issues = get_project_info(PROJECT_LIST, update=True)
 ```
 
 `commits` and `issues` are both pandas dataframes with a whole bunch of information about commits and issues.
