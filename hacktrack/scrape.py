@@ -14,6 +14,8 @@ def _get_datadir():
 
 
 def _get_author(x):
+    """ Gets Github username from commit information
+    """
     if isinstance(x, dict):
         return x.get('login', '')
     return ''
@@ -72,8 +74,9 @@ def get_project_info(project_list, datadir=None, since='2018-08-05',
                              user=com.author.apply(_get_author))
             commits = commits.append(com, sort=True)
         if iss is not None:
-            iss = iss.assign(project='{}/{}'.format(proj.user, proj.repo))
-            issues = issues.append(iss, sort=True)
+            iss = iss.assign(project='{}/{}'.format(proj.user, proj.repo),
+                             author=iss.user.apply(_get_author))
+            issues = issues.append(iss[iss.created_at > since], sort=True)
 
     commits = commits.reset_index(drop=True)
     issues = issues.reset_index(drop=True)
