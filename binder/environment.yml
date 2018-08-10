@@ -1,0 +1,13 @@
+name: hacktrack_test
+channels:
+    - conda-forge
+dependencies:
+    - python=3.6
+    - numpy
+    - matplotlib
+    - pandas
+    - seaborn
+    - tqdm
+    - pip
+    - pip:
+        - "-e git+https://github.com/rmarkello/watchtower#egg=watchtower"
