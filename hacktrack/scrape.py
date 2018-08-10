@@ -67,4 +67,7 @@ def get_project_info(project_list, datadir=None, since='2018-08-05',
             iss = iss.assign(project='{}/{}'.format(proj.user, proj.repo))
             issues = issues.append(iss, sort=True)
 
+    commits = commits.reset_index(drop=True)
+    issues = issues.reset_index(drop=True)
+
     return commits, issues

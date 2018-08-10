@@ -24,7 +24,12 @@ def main():
         packages=find_packages(exclude=['hacktrack/tests']),
         package_data=ldict['PACKAGE_DATA'],
         tests_require=ldict['TESTS_REQUIRE'],
-        license=ldict['LICENSE']
+        license=ldict['LICENSE'],
+        entry_points={
+            'console_scripts': [
+                'hacktrack=hacktrack.server:run_server'
+            ]
+}
     )
 
 

@@ -5,10 +5,14 @@ A small project for making plots of hackathon statistics. Designed at Neurohacka
 It is _strongly_ encouraged you install via the following in a new conda environment or your code will very likely **not work**. Sorry!
 
 ```bash
+# create a new conda env with the required modules
+conda create -n hacktrack python=3.6 numpy matplotlib pandas seaborn tqdm
+source activate hacktrack
+# install rmarkello/watchtower, forked form docathon/watchtower
+pip install git+git://github.com/rmarkello/watchtower
+# install hacktrack in developer mode
 git clone https://github.com/rmarkello/hacktrack.git
 cd hacktrack
-conda create -n hacktrack python=3.6 numpy matplotlib pandas seaborn tqdm
-pip install git+git://github.com/rmarkello/watchtower
 pip install -e .
 ```
 
