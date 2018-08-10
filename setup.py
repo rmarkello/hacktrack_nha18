@@ -21,7 +21,6 @@ def main():
         url=ldict['URL'],
         download_url=ldict['DOWNLOAD_URL'],
         install_requires=ldict['INSTALL_REQUIRES'],
-        dependency_links=ldict['DEPENDENCY_LINKS'],
         packages=find_packages(exclude=['hacktrack/tests']),
         package_data=ldict['PACKAGE_DATA'],
         tests_require=ldict['TESTS_REQUIRE'],

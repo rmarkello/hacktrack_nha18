@@ -11,7 +11,13 @@ PROJECT_LIST = op.join(op.dirname(op.abspath(__file__)),
                        'data/.projects.csv')
 
 
-def get_all_project_info(project_list, datadir='./data', since='2018-08-05',
+def _get_datadir():
+    """ Gets data directory where `PROJECT_LIST` is located
+    """
+    return op.dirname(PROJECT_LIST)
+
+
+def get_all_project_info(project_list, datadir=None, since='2018-08-05',
                          update=False, verbose=True):
     """
     Gets project info (commits + issues) from `project_list`
@@ -21,7 +27,7 @@ def get_all_project_info(project_list, datadir='./data', since='2018-08-05',
     project_list : str
         Filepath to project list with columns user/repo
     datadir : str, optional
-        Path to where data on projects should be stored. Default: './data'
+        Path to where data on projects should be stored. Default: None
     since : str, optional
         Date (YYYY-MM-DD) from which to pull information on projects:
         Default: 2018-08-05
@@ -38,6 +44,7 @@ def get_all_project_info(project_list, datadir='./data', since='2018-08-05',
     issues : pd.core.data.DataFrame
         Information on issues from projects in `project_list`
     """
+    datadir = _get_datadir() if datadir is None else datadir
 
     # empty dataframes to store all data
     commits, issues = pd.DataFrame(), pd.DataFrame()
@@ -69,7 +76,7 @@ def get_all_project_info(project_list, datadir='./data', since='2018-08-05',
     return commits, issues
 
 
-def plot_commits_by_project(since='2018-08-07', datadir='./data'):
+def plot_commits_by_project(since='2018-08-07', datadir=None):
     """
     Makes bar plot of commits by project
 
@@ -79,13 +86,15 @@ def plot_commits_by_project(since='2018-08-07', datadir='./data'):
         Date (YYYY-MM-DD) from which to pull information on projects:
         Default: 2018-08-07
     datadir : str, optional
-        Path to where data on projects should be stored. Default: './data'
+        Path to where data on projects should be stored. Default: None
 
     Returns
     -------
     ax : matplotlib.axes.Axis
         Axis with plot
     """
+    datadir = _get_datadir() if datadir is None else datadir
+
     # get project information
     info = get_all_project_info(PROJECT_LIST, datadir=datadir,
                                 since=since, verbose=False)[0]
@@ -100,7 +109,7 @@ def plot_commits_by_project(since='2018-08-07', datadir='./data'):
     return ax
 
 
-def plot_commits_by_user(project=None, since='2018-08-07', datadir='./data'):
+def plot_commits_by_user(project=None, since='2018-08-07', datadir=None):
     """
     Makes bar plot of commits by user
 
@@ -112,13 +121,15 @@ def plot_commits_by_user(project=None, since='2018-08-07', datadir='./data'):
         Date (YYYY-MM-DD) from which to pull information on projects:
         Default: 2018-08-07
     datadir : str, optional
-        Path to where data on projects should be stored. Default: './data'
+        Path to where data on projects should be stored. Default: None
 
     Returns
     -------
     ax : matplotlib.axes.Axis
         Axis with plot
     """
+    datadir = _get_datadir() if datadir is None else datadir
+
     # get project information
     info = get_all_project_info(PROJECT_LIST, datadir=datadir,
                                 since=since, verbose=False)[0]
@@ -143,7 +154,7 @@ def plot_commits_by_user(project=None, since='2018-08-07', datadir='./data'):
 
 
 def plot_commits_by_time(project, since='2018-08-07', frequency='10H',
-                         datadir='./data'):
+                         datadir=None):
     """
     Plots commits in `project` over time
 
@@ -157,14 +168,16 @@ def plot_commits_by_time(project, since='2018-08-07', frequency='10H',
     frequency : str, optional
         Time chunks with which to plot commits over time. Default: '10H'
     datadir : str, optional
-        Path to where data on projects should be stored. Default: './data'
+        Path to where data on projects should be stored. Default: None
 
     Returns
     -------
     ax : matplotlib.axes.Axis
         Axis with plot
     """
-    # get info for specifiy project
+    datadir = _get_datadir() if datadir is None else datadir
+
+    # get info for specific project
     user, repo = project.split('/')
     info = wtc.load_commits(user, repo, data_home=datadir).date
 
@@ -184,7 +197,7 @@ def plot_commits_by_time(project, since='2018-08-07', frequency='10H',
 
 
 def scatter_by_statistics(project, since='2018-08-07', frequency='10H',
-                          datadir='./data'):
+                          datadir=None):
     """
     Makes scatterplot of commits in `project` by additions + deletions
 
@@ -198,13 +211,15 @@ def scatter_by_statistics(project, since='2018-08-07', frequency='10H',
     frequency : str, optional
         Time chunks with which to plot commits over time. Default: '10H'
     datadir : str, optional
-        Path to where data on projects should be stored. Default: './data'
+        Path to where data on projects should be stored. Default: None
 
     Returns
     -------
     ax : matplotlib.axes.Axis
         Axis with plot
     """
+    datadir = _get_datadir() if datadir is None else datadir
+
     # get info for project
     user, repo = project.split('/')
     info = wtc.load_commits(user, repo, data_home=datadir)
@@ -216,7 +231,7 @@ def scatter_by_statistics(project, since='2018-08-07', frequency='10H',
 
 
 def plot_issues_by_time(project, since='2018-08-07', frequency='10H',
-                        datadir='./data'):
+                        datadir=None):
     """
     Makes plot of issues created in `project` over time
 
@@ -230,7 +245,7 @@ def plot_issues_by_time(project, since='2018-08-07', frequency='10H',
     frequency : str, optional
         Time chunks with which to plot commits over time. Default: '10H'
     datadir : str, optional
-        Path to where data on projects should be stored. Default: './data'
+        Path to where data on projects should be stored. Default: None
 
     Returns
     -------

@@ -16,12 +16,7 @@ INSTALL_REQUIRES = [
     'numpy',
     'pandas',
     'seaborn',
-    'tqdm',
-    'watchtower==1.0'
-]
-
-DEPENDENCY_LINKS = [
-    'https://github.com/rmarkello/watchtower/tarball/master#egg=watchtower-1.0'
+    'tqdm'
 ]
 
 TESTS_REQUIRE = [

@@ -1,2 +1,4 @@
 data/
 *.egg-info
+!.project.csv
+__pycache__/
