@@ -3,10 +3,10 @@ miykael,mni_atlas_reader
 miykael,parcellation_fragmenter
 npnl,pals
 amandakeasson,tvb_nipype
-hbclab,nibetaseries
+HBClab,NiBetaSeries
 danielmlow,brain_age
 srcole,o-factor
-jarodroland,convouch
+jarodroland,ConvOuch
 kfinc,nilearn_task_networks
 peerherholz,bidsonym
 mikellagreen,o-factor_webapp
