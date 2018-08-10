@@ -60,13 +60,11 @@ def get_project_info(project_list, datadir=None, since='2018-08-05',
                           proj.user, proj.repo))
         com = gc(proj.user, proj.repo, **params)
         iss = gi(proj.user, proj.repo, **params)
-        if com is None or iss is None:
-            continue
-        commits = commits.append(com.assign(project='{}/{}'.format(proj.user,
-                                                                   proj.repo)),
-                                 sort=False)
-        issues = issues.append(iss.assign(project='{}/{}'.format(proj.user,
-                                                                 proj.repo)),
-                               sort=False)
+        if com is not None:
+            com = com.assign(project='{}/{}'.format(proj.user, proj.repo))
+            commits = commits.append(com, sort=True)
+        if iss is not None:
+            iss = iss.assign(project='{}/{}'.format(proj.user, proj.repo))
+            issues = issues.append(iss, sort=True)
 
     return commits, issues
