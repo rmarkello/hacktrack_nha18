@@ -1,4 +1,5 @@
 import datetime
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -6,7 +7,7 @@ from hacktrack.scrape import (get_project_info, PROJECT_LIST)
 sns.set(style='white')
 
 
-def plot_commits_by_project(since='2018-08-07', datadir=None):
+def plot_commits_by_project(since='2018-08-07', datadir=None, **kwargs):
     """
     Makes bar plot of commits by project
 
@@ -29,7 +30,7 @@ def plot_commits_by_project(since='2018-08-07', datadir=None):
     data = info.groupby('project').count().sha
 
     # make plot!
-    ax = sns.barplot(data.values, data.index)
+    ax = sns.barplot(data.values, data.index, **kwargs)
     sns.despine(ax=ax)
     ax.set(xlabel='Number of commits', ylabel='')
     ax.figure.tight_layout()
