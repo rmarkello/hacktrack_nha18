@@ -1,16 +1,16 @@
-import os.path as op
+from pkg_resources import resource_filename
 import pandas as pd
 import watchtower.commits_ as wtc
 import watchtower.issues_ as wti
 
-PROJECT_LIST = op.join(op.dirname(op.abspath(__file__)),
-                       'data/.projects.csv')
+PROJECT_LIST = resource_filename('hacktrack',
+                                 'data/.projects.csv')
 
 
 def _get_datadir():
     """ Gets data directory where `PROJECT_LIST` is located
     """
-    return op.dirname(PROJECT_LIST)
+    return resource_filename('hacktrack', 'data')
 
 
 def _get_author(x):

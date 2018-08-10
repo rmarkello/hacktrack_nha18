@@ -1,6 +1,8 @@
 # hacktrack
 A small project for making plots of hackathon statistics. Designed at Neurohackademy 2018.
 
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/rmarkello/hacktrack/master?filepath=notebook%2Fhacktrack.ipynb)
+
 # Installation and setup
 It is _strongly_ encouraged you install via the following in a new `conda` environment or your code will very likely **not work**. Sorry!
 

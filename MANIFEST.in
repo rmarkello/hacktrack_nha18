@@ -1,0 +1,2 @@
+include hacktrack/data/ *
+recursive-include hacktrack/data *

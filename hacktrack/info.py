@@ -23,4 +23,5 @@ TESTS_REQUIRE = [
 ]
 
 PACKAGE_DATA = {
+    'hacktrack': ['data/*', 'data/*/*']
 }

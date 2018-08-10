@@ -25,11 +25,7 @@ def main():
         package_data=ldict['PACKAGE_DATA'],
         tests_require=ldict['TESTS_REQUIRE'],
         license=ldict['LICENSE'],
-        entry_points={
-            'console_scripts': [
-                'hacktrack=hacktrack.server:run_server'
-            ]
-}
+        include_package_data=True
     )
 
 
