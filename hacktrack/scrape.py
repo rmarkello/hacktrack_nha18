@@ -13,6 +13,12 @@ def _get_datadir():
     return op.dirname(PROJECT_LIST)
 
 
+def _get_author(x):
+    if isinstance(x, dict):
+        return x.get('login', '')
+    return ''
+
+
 def get_project_info(project_list, datadir=None, since='2018-08-05',
                      update=False, verbose=True):
     """
@@ -61,7 +67,9 @@ def get_project_info(project_list, datadir=None, since='2018-08-05',
         com = gc(proj.user, proj.repo, **params)
         iss = gi(proj.user, proj.repo, **params)
         if com is not None:
-            com = com.assign(project='{}/{}'.format(proj.user, proj.repo))
+            com = com.query('additions < 10000 & deletions < 10000')
+            com = com.assign(project='{}/{}'.format(proj.user, proj.repo),
+                             user=com.author.apply(_get_author))
             commits = commits.append(com, sort=True)
         if iss is not None:
             iss = iss.assign(project='{}/{}'.format(proj.user, proj.repo))
