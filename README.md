@@ -26,3 +26,5 @@ $ export GITHUB_API=rmarkello:1239012803218032981390218930218939021323
 ```
 
 `commits` and `issues` are both pandas dataframes with a whole bunch of information about commits and issues.
+
+You can also check out `hacktrack.plotting` to do some fun plotting things.

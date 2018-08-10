@@ -1,3 +1,4 @@
-__all__ = ['PROJECT_LIST', 'get_all_project_info']
+__all__ = ['PROJECT_LIST', 'get_project_info', 'plotting']
 
-from hacktrack.scrape import PROJECT_LIST, get_all_project_info
+from hacktrack.scrape import PROJECT_LIST, get_project_info
+from hacktrack import plotting
