@@ -1,4 +1,4 @@
-name: hacktrack_test
+name: hacktrack
 channels:
     - conda-forge
 dependencies:
