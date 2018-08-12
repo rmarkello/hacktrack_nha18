@@ -4,7 +4,8 @@ NAME = 'hacktrack'
 MAINTAINER = 'Ross Markello and friends'
 EMAIL = 'rossmarkello@gmail.com'
 VERSION = __version__
-LICENSE = 'MIT'
+# BIDS/watchtower doesn't have a license file...
+LICENSE = 'Copyright reserved by Berkeley Institute for Data Science'
 DESCRIPTION = ('A toolbox for hackathons')
 LONG_DESCRIPTION = ('')
 URL = 'http://github.com/rmarkello/{name}'.format(name=NAME)
