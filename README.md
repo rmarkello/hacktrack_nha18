@@ -19,19 +19,7 @@ If you know where you're going, feel free to jump ahead:
 #### Installation
 You can install this package using [`conda`](http://conda.io/) with the [`environment.yml`](binder/environment.yml) inside the `binder` directory with `conda env create -f binder/environment.yml`.
 
-
-Alternatively, you can attempt to install it using:
-
-```bash
-$ git clone https://github.com/rmarkello/hacktrack.git
-$ cd hacktrack
-$ python setup.py install
-```
-
-Make sure to omit the `$` if copying and pasting these commands!
-
-
-Finally, you can use `pip` to install directly from GitHub with `pip install git+https://github.com/rmarkello/hacktrack#egg=hacktrack`.
+Other methods of installation are not yet supported due to the reliance on unstable upstream packages.
 
 #### Setup
 If you are going to be _collecting_ data rather than simply analyzing / plotting pre-collected data, you will want to generate a GitHub personal access token.
@@ -64,7 +52,6 @@ To examine that data, you can load it directly by:
 
 The generated `commits` and `issues` are `pandas.DataFrame` objects with a whole bunch of information about commits and issues from the Neurohackademy 2018 projects.
 You can feed these dataframes into the functions in `hacktrack.plotting` to do some fun plotting things!
-
 
 To get an idea for the sorts of plots that can be generated, check out our [demo notebook](notebook/hacktrack.ipynb).
 

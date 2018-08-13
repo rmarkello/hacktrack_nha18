@@ -11,3 +11,4 @@ dependencies:
     - pip
     - pip:
         - "-e git+https://github.com/rmarkello/watchtower#egg=watchtower"
+        - "-e git+https://github.com/rmarkello/hacktrack#egg=hacktrack"
