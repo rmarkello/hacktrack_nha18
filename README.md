@@ -1,6 +1,6 @@
 # hacktrack
 This package provides a Python interface for tracking and plotting GitHub statistics, originally intended for use during hackathons.
-It was designed during [Neurohackademy 2018](https://neurohackademy.org/), and was _heavily_ inspired by the amazing work from the [BIDS Docathon](https://docathon.github.io/docathon/) (see the [credit][#credit] section for more details).
+It was designed during [Neurohackademy 2018](https://neurohackademy.org/), and was _heavily_ inspired by the amazing work from the [BIDS Docathon](https://docathon.github.io/docathon/) (see the [credit](#credit) section for more details).
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/rmarkello/hacktrack/master?filepath=notebook%2Fhacktrack.ipynb)
 
