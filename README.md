@@ -3,7 +3,8 @@
 This package provides a Python interface for quantifying hackathons.
 It was designed during [Neurohackademy 2018](https://neurohackademy.org/) and was heavily inspired by the amazing work from the [BIDS Docathon](https://docathon.github.io/docathon/) team (see the [credits](#credits) section for more details).
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/rmarkello/hacktrack/master?filepath=notebook%2Fhacktrack.ipynb)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/rmarkello/hacktrack/master?filepath=notebook%2Fhacktrack.ipynb) 
+[![Join the chat at https://gitter.im/hacktrack_/Lobby](https://badges.gitter.im/hacktrack_/Lobby.svg)](https://gitter.im/hacktrack_/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Table of Contents
 
